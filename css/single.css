@@ -1,0 +1,680 @@
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --bs-orange: #fd7e14;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-primary: #f17945;
+  --bs-secondary: #343661;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  background: url(../images/hero_2.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 690px;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 690px;
+}
+
+nav {
+  position: relative;
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 25px;
+  font-family: "Brygada 1918", serif;
+  font-weight: 700;
+  color: var(--bs-light);
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  color: var(--bs-light);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #f0f1f3;
+  font-weight: 500;
+}
+
+#blogBtn {
+  color: var(--bs-white);
+}
+
+.contact {
+  display: none;
+}
+
+.dropdown-bg {
+  position: relative;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f0f1f3;
+  font-weight: 500;
+}
+
+.dropdown:hover {
+  color: var(--bs-white);
+}
+
+.dropdown i {
+  rotate: 90deg;
+  color: var(--bs-light);
+  cursor: pointer;
+}
+
+.dropdown-list {
+  position: absolute;
+  left: -15px;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  background-color: var(--bs-white);
+  height: 130px;
+  width: 175px;
+  padding: 1rem 1.5rem;
+  display: none;
+}
+
+.dropdown-list li {
+  padding: 0.5rem 0;
+  color: var(--bs-dark);
+}
+
+.dropdown-list li:hover {
+  color: var(--bs-primary);
+}
+
+.hamburger,
+.closeBtn {
+  display: none;
+  cursor: pointer;
+}
+
+nav button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: transparent;
+  border: 1px solid var(--bs-white);
+}
+
+.header-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem 4rem 0 4rem;
+  color: var(--bs-light);
+  width: 100%;
+  text-align: center;
+  animation: headerAnimation 1s ease-in-out;
+}
+
+.header-section h3 {
+  padding-bottom: 1rem;
+  font-weight: 400;
+}
+
+.header-section span {
+  color: var(--bs-primary);
+}
+
+.header-section h1 {
+  font-size: 60px;
+  font-family: "Brygada 1918", serif;
+}
+
+.header-section p {
+  padding-top: 1rem;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 45%;
+}
+
+@keyframes headerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 5rem 4rem 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-container {
+  width: 60%;
+  color: var(--bs-dark);
+  font-weight: 400;
+}
+
+.left-container h3 {
+  line-height: 30px;
+  font-size: 20px;
+  padding-bottom: 2rem;
+  font-weight: 400;
+}
+
+.left-container p {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.left-container span {
+  display: block;
+  padding-top: 1rem;
+}
+
+.categories {
+  padding-top: 3rem;
+}
+
+.categories span {
+  color: var(--bs-primary);
+  display: inline;
+}
+
+.comments-bg {
+  padding-top: 4rem;
+}
+
+.comments {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 4rem;
+}
+
+.comments-bg h1,
+.leave-comment h1 {
+  font-family: "Brygada 1918", serif;
+  font-weight: 400;
+  color: var(--bs-secondary);
+  font-size: 28px;
+  padding-bottom: 3rem;
+}
+
+.comments img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.comments h4 {
+  font-family: "Brygada 1918", serif;
+  font-weight: 400;
+  color: var(--bs-secondary);
+  padding-bottom: 0.7rem;
+  font-size: 20px;
+}
+
+.comments h5 {
+  color: #ccc;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.comments p {
+  font-size: 14px;
+  padding-top: 0.2rem;
+}
+
+.comments button {
+  margin-top: 1rem;
+  padding: 5px 10px;
+  border-radius: 2px;
+  background: #e6e6e6;
+  color: var(--bs-dark);
+  border: none;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.leave-comment {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.leave-comment label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--bs-dark);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1.3rem;
+  outline: 0;
+}
+
+.leave-comment textarea {
+  width: 100%;
+  padding: 1rem 1rem 10rem 1rem;
+  margin-top: 0.2rem;
+  outline: 0;
+}
+
+.submit {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.submit:hover {
+  opacity: 0.8;
+}
+
+.right-container {
+  width: 30%;
+}
+
+.input-bg {
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 8rem;
+}
+
+.input-bg input {
+  font-family: "Inter", sans-serif;
+  padding: 1rem;
+  width: 90%;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid var(--bs-primary);
+  outline: none;
+  margin: 0.7rem 0;
+}
+
+.right-container-section h3,
+.about-content h3 {
+  font-family: "Brygada 1918", serif;
+  font-weight: 400;
+  color: var(--bs-secondary);
+}
+
+.right-container-section div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.right-container-section div p {
+  color: var(--bs-primary);
+  font-size: 15px;
+}
+
+.right-container-section h4 {
+  font-weight: 400;
+  color: var(--bs-gray);
+}
+
+.about-content {
+  padding-top: 5rem;
+}
+
+.about-content img {
+  height: 130px;
+  width: 130px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  color: var(--bs-dark);
+  padding-top: 1rem;
+  width: 95%;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+.about-content button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  margin-top: 2rem;
+}
+
+.about-content button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  padding: 5rem 4rem;
+  background: #e7e7e7;
+}
+
+.footer-content {
+  display: flex;
+}
+
+.footer-content-left {
+  width: 35%;
+}
+
+.footer-content h4 {
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  font-size: 16px;
+}
+
+.footer-content-left span {
+  color: var(--bs-primary);
+}
+
+.footer-content-left p {
+  color: var(--bs-gray);
+  font-weight: 400;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  line-height: 25px;
+  font-size: 14px;
+  width: 90%;
+}
+
+.footer-content-left button {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: var(--bs-gray);
+  color: var(--bs-white);
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.footer-content-left button:hover {
+  background: var(--bs-primary);
+}
+
+.footer-content-right {
+  display: grid;
+  grid-template-columns: 20% 20% 40%;
+  justify-content: space-between;
+  width: 60%;
+  padding-left: 2rem;
+}
+
+.footer-list {
+  padding-top: 2rem;
+  list-style: none;
+}
+
+.footer-list li {
+  padding-bottom: 1rem;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.footer-list a {
+  color: var(--bs-gray);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+@media (min-width: 150px) and (max-width: 884px) {
+  header {
+    height: 450px;
+  }
+
+  header::before {
+    height: 450px;
+  }
+
+  nav {
+    padding: 1.5rem 1rem;
+  }
+
+  .overlay {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    list-style: none;
+    gap: 35px;
+    background: var(--bs-white);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 75%;
+    z-index: 2;
+    padding-left: 2rem;
+    display: none;
+    color: var(--bs-dark);
+  }
+
+  .nav-list a {
+    color: var(--bs-dark);
+  }
+
+  #blogBtn,
+  .dropdown {
+    color: var(--bs-dark);
+  }
+
+  .contact {
+    display: block;
+  }
+
+  .dropdown:hover {
+    color: var(--bs-dark);
+  }
+
+  .dropdown i {
+    color: var(--bs-dark);
+  }
+
+  .dropdown-list {
+    position: relative;
+    top: 10px;
+    background-color: transparent;
+  }
+
+  .hamburger,
+  .closeBtn {
+    display: block;
+  }
+
+  .closeBtn {
+    height: 20px;
+    width: 20px;
+    margin: 1.5rem 0 1rem 0;
+    position: relative;
+    left: 80%;
+  }
+
+  nav button {
+    display: none;
+  }
+
+  .header-section {
+    position: relative;
+    padding: 2rem 1rem 0 1rem;
+    color: var(--bs-light);
+    width: 100%;
+  }
+
+  .header-section h1 {
+    font-size: 30px;
+  }
+
+  .header-section p {
+    width: 95%;
+  }
+
+  footer {
+    padding: 5rem 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content-left {
+    width: 100%;
+  }
+
+  .footer-content-left p {
+    width: 95%;
+  }
+
+  .footer-content-right {
+    grid-template-columns: auto;
+    width: 100%;
+    padding-left: 0;
+    padding-top: 3rem;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 5rem 1rem 2rem 1rem;
+    flex-direction: column;
+  }
+
+  .left-container {
+    width: 100%;
+  }
+
+  .right-container {
+    width: 100%;
+  }
+
+  .input-bg {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .about-content p {
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+
+  .about-content button {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 884px) {
+  header {
+    height: 650px;
+  }
+
+  header::before {
+    height: 650px;
+  }
+
+  nav {
+    padding: 1.5rem 2rem;
+  }
+
+  .nav-list {
+    width: 40%;
+  }
+
+  .header-section {
+    padding: 10rem 2rem 0 2rem;
+  }
+
+  .header-section h1 {
+    font-size: 40px;
+    width: 80%;
+  }
+
+  .container {
+    padding: 5rem 2rem 2rem 2rem;
+  }
+
+  footer {
+    padding: 5rem 2rem;
+  }
+}

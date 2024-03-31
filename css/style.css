@@ -1,0 +1,1377 @@
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --bs-orange: #fd7e14;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-primary: #f17945;
+  --bs-secondary: #343661;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  background: url(../images/hero_1.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 690px;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 690px;
+}
+
+nav {
+  position: relative;
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 25px;
+  font-family: "Brygada 1918", serif;
+  font-weight: 700;
+  color: var(--bs-light);
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  color: var(--bs-light);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #f0f1f3;
+  font-weight: 500;
+}
+
+#homeBtn {
+  color: var(--bs-white);
+}
+
+.contact {
+  display: none;
+}
+
+.dropdown-bg {
+  position: relative;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f0f1f3;
+  font-weight: 500;
+}
+
+.dropdown:hover {
+  color: var(--bs-white);
+}
+
+.dropdown i {
+  rotate: 90deg;
+  color: var(--bs-light);
+  cursor: pointer;
+}
+
+.dropdown-list {
+  position: absolute;
+  left: -15px;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  background-color: var(--bs-white);
+  height: 130px;
+  width: 175px;
+  padding: 1rem 1.5rem;
+  display: none;
+}
+
+.dropdown-list li {
+  padding: 0.5rem 0;
+  color: var(--bs-dark);
+}
+
+.dropdown-list li:hover {
+  color: var(--bs-primary);
+}
+
+.hamburger,
+.closeBtn {
+  display: none;
+  cursor: pointer;
+}
+
+nav button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: transparent;
+  border: 1px solid var(--bs-white);
+}
+
+.header-section {
+  position: relative;
+  padding: 7rem 4rem 0 4rem;
+  color: var(--bs-light);
+  width: 45%;
+  animation: headerAnimation 1s ease-in-out;
+}
+
+.header-section h1 {
+  font-size: 60px;
+  font-family: "Brygada 1918", serif;
+}
+
+.header-section p {
+  padding-top: 1rem;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.video {
+  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.play-btn {
+  background: var(--bs-white);
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-btn i {
+  color: var(--bs-dark);
+}
+
+.video p {
+  padding-top: 0;
+  line-height: 0;
+  font-size: 14;
+  font-weight: 400;
+}
+
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  cursor: pointer;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  display: none;
+}
+
+.video-bg iframe {
+  width: 70%;
+  height: 80vh;
+}
+
+@keyframes headerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10rem 5rem;
+  opacity: 0;
+}
+
+.section-container {
+  width: 40%;
+}
+
+.section-container h1 {
+  font-size: 45px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+}
+
+.section-container p {
+  padding-top: 1rem;
+  font-weight: 400;
+  color: var(--bs-dark);
+  line-height: 25px;
+}
+
+.section-container button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.section-container button:hover,
+.second-container button:hover,
+.fourth-container-section button:hover {
+  opacity: 0.8;
+}
+
+.container-image {
+  position: relative;
+  transform: translateY(120px);
+}
+
+.img1 {
+  height: 500px;
+  width: 350px;
+  border: 10px solid var(--bs-white);
+}
+
+.img2 {
+  height: 300px;
+  width: 220px;
+  border: 10px solid var(--bs-white);
+  position: absolute;
+  left: -35%;
+  top: -20%;
+}
+
+@keyframes containerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.containerSlideUp {
+  animation-name: containerAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.second-container {
+  width: 100%;
+  background: #f7f7f7;
+  margin-top: 5rem;
+  padding: 5rem 4rem 5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-container-section {
+  width: 17.5%;
+}
+
+.second-container-section h1 {
+  font-size: 30px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  width: 80%;
+}
+
+.second-container-section p {
+  padding-top: 2rem;
+  font-weight: 400;
+  color: var(--bs-dark);
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.section-container span {
+  display: block;
+  padding-top: 1rem;
+}
+
+.second-container-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  width: 76.5%;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.grid-img {
+  background: rgb(255, 208, 187);
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-img img {
+  height: 50px;
+  width: 50px;
+}
+
+.second-container-grid h3 {
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.second-container-grid p {
+  color: var(--bs-dark);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.second-container button,
+.fourth-container-section button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.third-container {
+  position: relative;
+  opacity: 0;
+}
+
+.third-container-section {
+  padding: 7rem 4rem 4rem 4rem;
+  width: 50%;
+}
+
+.third-container-section h1 {
+  font-size: 45px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  width: 80%;
+}
+
+.third-container-section p {
+  padding-top: 1rem;
+  font-weight: 400;
+  color: var(--bs-dark);
+  line-height: 25px;
+}
+
+@keyframes thirdContainerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thirdContainerSlideUp {
+  animation-name: thirdContainerAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.swiper1 {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  .swiper-slide {
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  --swiper-navigation-size: "60px";
+  --swiper-pagination-color: var(--bs-orange);
+  --swiper-pagination-bullet-inactive-color: var(--bs-orange);
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  --swiper-scrollbar-bg-color: var(--bs-white);
+  --swiper-scrollbar-drag-bg-color: var(--bs-white);
+}
+
+.swiper1 {
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.swiper1 {
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+.destination-slider {
+  width: 95%;
+}
+
+.destination-image {
+  background: url(../images/img-1.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image2 {
+  background: url(../images/img-2.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image3 {
+  background: url(../images/img-3.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image4 {
+  background: url(../images/img-4.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image5 {
+  background: url(../images/img-5.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image6 {
+  background: url(../images/img-6.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image7 {
+  background: url(../images/img-7.jpg) no-repeat center center/cover;
+  height: 350px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px -70px 36px -28px inset;
+}
+
+.destination-image h3,
+.destination-image2 h3,
+.destination-image3 h3,
+.destination-image4 h3,
+.destination-image5 h3,
+.destination-image6 h3,
+.destination-image7 h3 {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  color: var(--bs-white);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.destination-slider h1 {
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+  font-size: 28px;
+  width: 92%;
+}
+
+.destination-slider p {
+  font-weight: 400;
+  color: var(--bs-dark);
+  font-size: 14px;
+}
+
+.fourth-container {
+  padding: 7rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+}
+
+.fourth-container-section {
+  width: 45%;
+}
+
+.fourth-container-section h1 {
+  padding-bottom: 2rem;
+  font-size: 45px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+}
+
+.fourth-container-section p {
+  font-weight: 400;
+  color: var(--bs-dark);
+  line-height: 25px;
+}
+
+.fourth-container-section span {
+  display: block;
+  padding-top: 1rem;
+}
+
+.fourth-container img {
+  height: 600px;
+  width: 450px;
+}
+
+@keyframes fourthContainerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fourthContainerSlideUp {
+  animation-name: fourthContainerAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.fifth-container {
+  background: #f7f7f7;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.fifth-container h1 {
+  font-size: 45px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.swiper2 {
+  width: 100%;
+  margin-top: 5rem;
+
+  .swiper-slide {
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+  }
+
+  --swiper-navigation-size: "60px";
+  --swiper-pagination-color: var(--bs-orange);
+  --swiper-pagination-bullet-inactive-color: var(--bs-orange);
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  --swiper-scrollbar-bg-color: #f7f7f7;
+  --swiper-scrollbar-drag-bg-color: #f7f7f7;
+}
+
+.swiper2 {
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.swiper2 {
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+.testimonials-bg {
+  background: var(--bs-white);
+  width: 100%;
+  padding: 2rem 1.5rem 0 1.5rem;
+  height: 600px;
+}
+
+.testimonials-bg img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+}
+
+.testimonials-bg h4 {
+  font-family: "Brygada 1918", serif;
+  font-weight: 400;
+  color: var(--bs-orange);
+  font-size: 18px;
+  padding-top: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+.testimonials-bg h5 {
+  font-weight: 400;
+  color: black;
+  font-size: 15px;
+  padding-bottom: 1.5rem;
+  line-height: 25px;
+}
+
+.testimonials-bg p {
+  font-size: 13px;
+  color: var(--bs-dark);
+  line-height: 22px;
+  padding-top: 0.5rem;
+}
+
+.sixth-container {
+  padding: 7rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sixth-container img {
+  height: 600px;
+  width: 450px;
+}
+
+.sixth-container-section {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sixth-container-section h1 {
+  font-size: 45px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  padding-bottom: 2rem;
+}
+
+.sixth-container-section-content {
+  border-bottom: 1px solid #ccd1d7;
+  border-left: 1px solid #ccd1d7;
+  border-right: 1px solid #ccd1d7;
+}
+
+.sixth-container-section-content i {
+  cursor: pointer;
+}
+
+.FAQ-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  padding: 1rem;
+  color: var(--bs-dark);
+  font-family: "Brygada 1918", serif;
+  font-weight: 700;
+  border-top: 1px solid #ccd1d7;
+}
+
+#plus {
+  display: block;
+}
+
+#minus {
+  display: none;
+}
+
+.FAQ-body {
+  padding: 1.2rem;
+  font-size: 14px;
+  color: var(--bs-dark);
+  display: none;
+}
+
+.FAQ-body-p {
+  line-height: 22px;
+}
+
+.seventh-container {
+  padding: 7rem 4rem;
+  opacity: 0;
+}
+
+.seventh-container h1 {
+  font-size: 45px;
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  padding-bottom: 2rem;
+}
+
+.gallery {
+  height: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.seventh-container-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 22%);
+  justify-content: space-between;
+}
+
+.seventh-container-grid h5 {
+  font-weight: 400;
+  color: var(--bs-dark);
+  padding-top: 2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1rem;
+}
+
+.seventh-container-grid h4 {
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  font-size: 18px;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+.seventh-container-grid h4:hover {
+  color: var(--bs-primary);
+}
+
+.seventh-container-grid p {
+  font-size: 15px;
+  color: var(--bs-dark);
+  font-weight: 400;
+  padding: 1rem 0 1rem 1rem;
+}
+
+.seventh-container-grid a {
+  font-size: 14px;
+  color: var(--bs-primary);
+  font-weight: 600;
+  padding-left: 1rem;
+}
+
+.seventh-container-grid a:hover {
+  color: #c3592c;
+}
+
+@keyframes seventhContainerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.seventhContainerSlideUp {
+  animation-name: seventhContainerAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.eight-container {
+  background: var(--bs-primary);
+  padding: 3rem 4rem;
+  width: 100%;
+  color: var(--bs-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eight-container h2 {
+  font-family: "Brygada 1918", serif;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.eight-container button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border: 1px solid var(--bs-white);
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.eight-container button:hover {
+  background: var(--bs-white);
+  color: var(--bs-primary);
+}
+
+footer {
+  padding: 5rem 4rem;
+  background: #e7e7e7;
+}
+
+.footer-content {
+  display: flex;
+}
+
+.footer-content-left {
+  width: 35%;
+}
+
+.footer-content h4 {
+  font-family: "Brygada 1918", serif;
+  color: var(--bs-secondary);
+  font-size: 16px;
+}
+
+.footer-content-left span {
+  color: var(--bs-primary);
+}
+
+.footer-content-left p {
+  color: var(--bs-gray);
+  font-weight: 400;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  line-height: 25px;
+  font-size: 14px;
+  width: 90%;
+}
+
+.footer-content-left button {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: var(--bs-gray);
+  color: var(--bs-white);
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.footer-content-left button:hover {
+  background: var(--bs-primary);
+}
+
+.footer-content-right {
+  display: grid;
+  grid-template-columns: 20% 20% 40%;
+  justify-content: space-between;
+  width: 60%;
+  padding-left: 2rem;
+}
+
+.footer-list {
+  padding-top: 2rem;
+  list-style: none;
+}
+
+.footer-list li {
+  padding-bottom: 1rem;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.footer-list a {
+  color: var(--bs-gray);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+@media (min-width: 150px) and (max-width: 884px) {
+  header {
+    height: 450px;
+  }
+
+  header::before {
+    height: 450px;
+  }
+
+  nav {
+    padding: 1.5rem 1rem;
+  }
+
+  .overlay {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    list-style: none;
+    gap: 35px;
+    background: var(--bs-white);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 75%;
+    z-index: 2;
+    padding-left: 2rem;
+    display: none;
+    color: var(--bs-dark);
+  }
+
+  .nav-list a {
+    color: var(--bs-dark);
+  }
+
+  #homeBtn,
+  .dropdown {
+    color: var(--bs-dark);
+  }
+
+  .contact {
+    display: block;
+  }
+
+  .dropdown:hover {
+    color: var(--bs-dark);
+  }
+
+  .dropdown i {
+    color: var(--bs-dark);
+  }
+
+  .dropdown-list {
+    position: relative;
+    top: 10px;
+    background-color: transparent;
+  }
+
+  .hamburger,
+  .closeBtn {
+    display: block;
+  }
+
+  .closeBtn {
+    height: 20px;
+    width: 20px;
+    margin: 1.5rem 0 1rem 0;
+    position: relative;
+    left: 80%;
+  }
+
+  nav button {
+    display: none;
+  }
+
+  .header-section {
+    position: relative;
+    padding: 2rem 1rem 0 1rem;
+    color: var(--bs-light);
+    width: 100%;
+  }
+
+  .header-section h1 {
+    font-size: 30px;
+  }
+
+  .header-section p {
+    width: 95%;
+  }
+
+  .play-btn {
+    height: 45px;
+    width: 50px;
+  }
+
+  .video-bg {
+    height: 100vh;
+    top: 5%;
+    left: 0;
+  }
+
+  .video-bg iframe {
+    width: 90%;
+    height: 40vh;
+  }
+
+  .close-btn {
+    top: 0;
+    right: 1rem;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 3rem 1rem;
+  }
+
+  .section-container {
+    width: 100%;
+  }
+
+  .section-container h1 {
+    font-size: 30px;
+    padding-top: 2rem;
+  }
+
+  .section-container p {
+    font-size: 14px;
+  }
+
+  .container-image {
+    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .img1 {
+    height: 350px;
+    width: 250px;
+  }
+
+  .img2 {
+    height: 200px;
+    width: 150px;
+    left: 3%;
+    top: 20%;
+  }
+
+  .second-container {
+    padding: 5rem 1rem;
+    flex-direction: column;
+  }
+
+  .second-container-section {
+    width: 80%;
+  }
+
+  .second-container-section h1 {
+    font-size: 25px;
+    width: 40%;
+  }
+
+  .second-container-grid {
+    grid-template-columns: auto auto;
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .third-container-section {
+    padding: 3rem 1rem 4rem 1rem;
+    width: 100%;
+  }
+
+  .third-container-section h1 {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .fourth-container {
+    padding: 3rem 1rem;
+    flex-direction: column-reverse;
+  }
+
+  .fourth-container-section {
+    width: 100%;
+  }
+
+  .fourth-container-section h1 {
+    padding-top: 2rem;
+    font-size: 30px;
+  }
+
+  .fourth-container-section p {
+    font-size: 14px;
+  }
+
+  .fourth-container img {
+    height: 500px;
+    width: 100%;
+  }
+
+  .fifth-container {
+    padding: 0 0 3rem 0;
+  }
+
+  .fifth-container h1 {
+    font-size: 30px;
+  }
+
+  .swiper2 {
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .testimonials-bg {
+    width: 90%;
+    height: 500px;
+  }
+
+  .sixth-container {
+    padding: 0 1rem 3rem 1rem;
+    flex-direction: column;
+  }
+
+  .sixth-container img {
+    height: 500px;
+    width: 100%;
+  }
+
+  .sixth-container-section {
+    width: 100%;
+  }
+
+  .sixth-container-section h1 {
+    font-size: 30px;
+    padding-top: 2rem;
+  }
+
+  .seventh-container {
+    padding: 3rem 1rem;
+  }
+
+  .seventh-container h1 {
+    font-size: 30px;
+    padding-bottom: 2rem;
+  }
+
+  .gallery {
+    height: 180px;
+    width: 100%;
+  }
+
+  .seventh-container-grid {
+    grid-template-columns: repeat(2, 47%);
+    row-gap: 50px;
+  }
+
+  .eight-container {
+    padding: 3rem 1rem;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .eight-container h2 {
+    font-size: 22px;
+    padding-bottom: 1rem;
+  }
+
+  footer {
+    padding: 5rem 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content-left {
+    width: 100%;
+  }
+
+  .footer-content-left p {
+    width: 95%;
+  }
+
+  .footer-content-right {
+    grid-template-columns: auto;
+    width: 100%;
+    padding-left: 0;
+    padding-top: 3rem;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 884px) {
+  header {
+    height: 650px;
+  }
+
+  header::before {
+    height: 650px;
+  }
+
+  nav {
+    padding: 1.5rem 2rem;
+  }
+
+  .nav-list {
+    width: 40%;
+  }
+
+  .header-section {
+    padding: 10rem 2rem 0 2rem;
+  }
+
+  .header-section h1 {
+    font-size: 40px;
+    width: 80%;
+  }
+
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .container-image {
+    align-items: center;
+  }
+
+  .img1 {
+    height: 450px;
+    width: 350px;
+  }
+
+  .img2 {
+    height: 320px;
+    width: 250px;
+    left: 3%;
+    top: 15%;
+  }
+
+  .second-container {
+    padding: 5rem 2rem;
+  }
+
+  .second-container-section h1 {
+    font-size: 30px;
+  }
+
+  .third-container-section {
+    padding: 3rem 2rem 4rem 2rem;
+  }
+
+  .third-container-section h1 {
+    font-size: 30px;
+  }
+
+  .fourth-container {
+    padding: 3rem 2rem;
+  }
+
+  .fourth-container-section p {
+    font-size: 14px;
+  }
+
+  .fourth-container img {
+    height: 1100px;
+    object-fit: cover;
+  }
+
+  .sixth-container {
+    padding: 0 2rem 3rem 2rem;
+  }
+
+  .sixth-container img {
+    height: 1100px;
+    object-fit: cover;
+  }
+
+  .seventh-container {
+    padding: 3rem 2rem;
+  }
+
+  .gallery {
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .eight-container {
+    padding: 3rem 2rem;
+  }
+
+  footer {
+    padding: 5rem 2rem;
+  }
+}
